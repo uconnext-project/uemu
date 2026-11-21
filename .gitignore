@@ -1,0 +1,9 @@
+# Build output of cicd.sh (upload this folder, do not commit it)
+/dist/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS junk
+.DS_Store

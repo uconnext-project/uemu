@@ -1,0 +1,10 @@
+num_ticks = 20
+
+[image_comparisons.output]
+tolerance = 5
+trigger = 1
+known_failure = true
+
+[player_options]
+with_renderer = { optional = false, quality = "high" }
+with_video = true

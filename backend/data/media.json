@@ -1,0 +1,138 @@
+{
+    "devices": {
+        "usb1": {
+            "id": 1,
+            "name": "SANDISK 16GB",
+            "type": "usb",
+            "handle": 1
+        },
+        "btsa": {
+            "id": 2,
+            "name": "Pixel 8",
+            "type": "btsa",
+            "handle": 2
+        }
+    },
+    "tracks": [
+        {
+            "title": "Highway Star",
+            "artist": "Deep Purple",
+            "album": "Machine Head",
+            "genre": "Rock",
+            "year": 1972,
+            "duration": 365
+        },
+        {
+            "title": "Smoke on the Water",
+            "artist": "Deep Purple",
+            "album": "Machine Head",
+            "genre": "Rock",
+            "year": 1972,
+            "duration": 340
+        },
+        {
+            "title": "Radar Love",
+            "artist": "Golden Earring",
+            "album": "Moontan",
+            "genre": "Rock",
+            "year": 1973,
+            "duration": 383
+        },
+        {
+            "title": "Born to Be Wild",
+            "artist": "Steppenwolf",
+            "album": "Steppenwolf",
+            "genre": "Rock",
+            "year": 1968,
+            "duration": 211
+        },
+        {
+            "title": "Life is a Highway",
+            "artist": "Tom Cochrane",
+            "album": "Mad Mad World",
+            "genre": "Rock",
+            "year": 1991,
+            "duration": 266
+        },
+        {
+            "title": "Drive",
+            "artist": "The Cars",
+            "album": "Heartbeat City",
+            "genre": "Pop",
+            "year": 1984,
+            "duration": 235
+        },
+        {
+            "title": "Little Red Corvette",
+            "artist": "Prince",
+            "album": "1999",
+            "genre": "Pop",
+            "year": 1982,
+            "duration": 304
+        },
+        {
+            "title": "Mustang Sally",
+            "artist": "Wilson Pickett",
+            "album": "The Wicked Pickett",
+            "genre": "Soul",
+            "year": 1966,
+            "duration": 183
+        },
+        {
+            "title": "Fast Car",
+            "artist": "Tracy Chapman",
+            "album": "Tracy Chapman",
+            "genre": "Folk",
+            "year": 1988,
+            "duration": 296
+        },
+        {
+            "title": "Ramble On",
+            "artist": "Led Zeppelin",
+            "album": "Led Zeppelin II",
+            "genre": "Rock",
+            "year": 1969,
+            "duration": 274
+        },
+        {
+            "title": "Running Down a Dream",
+            "artist": "Tom Petty",
+            "album": "Full Moon Fever",
+            "genre": "Rock",
+            "year": 1989,
+            "duration": 263
+        },
+        {
+            "title": "Shut Up and Drive",
+            "artist": "Rihanna",
+            "album": "Good Girl Gone Bad",
+            "genre": "Pop",
+            "year": 2007,
+            "duration": 212
+        },
+        {
+            "title": "Midnight City",
+            "artist": "M83",
+            "album": "Hurry Up, We're Dreaming",
+            "genre": "Electronic",
+            "year": 2011,
+            "duration": 244
+        },
+        {
+            "title": "Nightcall",
+            "artist": "Kavinsky",
+            "album": "OutRun",
+            "genre": "Electronic",
+            "year": 2013,
+            "duration": 258
+        },
+        {
+            "title": "Kickstart My Heart",
+            "artist": "Motley Crue",
+            "album": "Dr. Feelgood",
+            "genre": "Metal",
+            "year": 1989,
+            "duration": 282
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+  "_source": "usr/share/IFS/part1/etc/audioCtrlSvcDEFAULT.conf (18.45 primary) — beeps_and_tones",
+  "_note": "Segment frequencies are treated as Hz. The stock file labels them kHz, but 600 kHz is inaudible; the DSP's beeps are 50-1200 Hz. Level 254 = ramp up, 255 = ramp down, -100 = silence, other values are dB relative to full scale.",
+  "beeps": {
+    "CONF_1": {
+      "segments": 3,
+      "freq": {"value": [600, 600, 600], "units": "Hz"},
+      "duration": {"value": [10, 1, 100], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"}
+    },
+    "CONF_2": {
+      "segments": 7,
+      "freq": {"value": [300, 300, 300, 0, 300, 300, 300], "units": "Hz"},
+      "duration": {"value": [10, 1, 100, 10, 10, 1, 100], "units": "mSec"},
+      "level": {"value": [254, 0, 255, -100, 254, 0, 255], "units": "dB"}
+    },
+    "CONF_3": {
+      "segments": 7,
+      "freq": {"value": [500, 500, 500, 0, 1000, 1000, 1000], "units": "Hz"},
+      "duration": {"value": [10, 20, 10, 20, 10, 20, 10], "units": "mSec"},
+      "level": {"value": [254, 0, 255, -100, 254, 0, 255], "units": "dB"}
+    },
+    "ALRT_1": {
+      "segments": 3,
+      "freq": {"value": [587, 587, 587], "units": "Hz"},
+      "freq2": {"value": [1174, 1174, 1174], "units": "Hz"},
+      "duration": {"value": [10, 100, 1000], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"}
+    },
+    "ALRT_2": {
+      "segments": 3,
+      "freq": {"value": [587, 587, 587], "units": "Hz"},
+      "freq2": {"value": [1174, 1174, 1174], "units": "Hz"},
+      "duration": {"value": [10, 100, 1000], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"}
+    },
+    "ALRT_3": {
+      "segments": 3,
+      "freq": {"value": [587, 587, 587], "units": "Hz"},
+      "freq2": {"value": [1174, 1174, 1174], "units": "Hz"},
+      "duration": {"value": [10, 100, 1000], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"}
+    },
+    "ALRT_4": {
+      "segments": 3,
+      "freq": {"value": [587, 587, 587], "units": "Hz"},
+      "freq2": {"value": [1174, 1174, 1174], "units": "Hz"},
+      "duration": {"value": [10, 100, 1000], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"}
+    },
+    "ALRT_5": {
+      "segments": 3,
+      "freq": {"value": [587, 587, 587], "units": "Hz"},
+      "freq2": {"value": [1174, 1174, 1174], "units": "Hz"},
+      "duration": {"value": [10, 100, 1000], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"}
+    },
+    "ALRT_6": {
+      "segments": 3,
+      "freq": {"value": [650, 650, 650], "units": "Hz"},
+      "duration": {"value": [11, 90, 200], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"}
+    },
+    "ALRT_7": {
+      "segments": 3,
+      "freq": {"value": [650, 650, 650], "units": "Hz"},
+      "duration": {"value": [11, 90, 200], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"}
+    },
+    "ALRT_8": {
+      "segments": 3,
+      "freq": {"value": [650, 650, 650], "units": "Hz"},
+      "duration": {"value": [11, 90, 200], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"}
+    },
+    "SIGNAL_1": {
+      "segments": 3,
+      "freq": {"value": [700, 700, 700], "units": "Hz"},
+      "duration": {"value": [10, 175, 10], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"},
+      "waveform": "square",
+      "volume_step": 15,
+      "Tdwell": 75
+    },
+    "SIGNAL_2": {
+      "segments": 7,
+      "freq": {"value": [1200, 1200, 1200, 1200, 1200, 1200, 1200], "units": "Hz"},
+      "duration": {"value": [10, 250, 10, 250, 10, 250, 10], "units": "mSec"},
+      "level": {"value": [254, 0, 255, -100, 254, 0, 255], "units": "dB"},
+      "waveform": "square",
+      "volume_step": 15,
+      "Tdwell": 750
+    },
+    "SIGNAL_3": {
+      "segments": 11,
+      "freq": {"value": [700, 700, 700, 700, 700, 700, 700, 700, 700, 700, 700], "units": "Hz"},
+      "duration": {"value": [10, 175, 10, 75, 10, 175, 10, 75, 10, 175, 10], "units": "mSec"},
+      "level": {"value": [254, 0, 255, -100, 254, 0, 255, -100, 254, 0, 255], "units": "dB"},
+      "waveform": "square",
+      "volume_step": 15,
+      "Tdwell": 500
+    },
+    "SIGNAL_4": {
+      "segments": 3,
+      "freq": {"value": [700, 700, 700], "units": "Hz"},
+      "duration": {"value": [10, 80, 10], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"},
+      "waveform": "square",
+      "volume_step": 15
+    },
+    "SIGNAL_5": {
+      "segments": 3,
+      "freq": {"value": [600, 600, 600], "units": "Hz"},
+      "duration": {"value": [10, 100, 10], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"},
+      "waveform": "square",
+      "volume_step": 15
+    },
+    "SIGNAL_6": {
+      "segments": 3,
+      "freq": {"value": [700, 700, 700], "units": "Hz"},
+      "duration": {"value": [10, 100, 10], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"},
+      "waveform": "square",
+      "volume_step": 15
+    },
+    "SIGNAL_7": {
+      "segments": 3,
+      "freq": {"value": [50, 50, 50], "units": "Hz"},
+      "duration": {"value": [10, 20, 80], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"},
+      "waveform": "square",
+      "volume_step": 15
+    },
+    "SIGNAL_8": {
+      "segments": 3,
+      "freq": {"value": [50, 50, 50], "units": "Hz"},
+      "duration": {"value": [10, 20, 80], "units": "mSec"},
+      "level": {"value": [254, 0, 255], "units": "dB"},
+      "waveform": "square",
+      "volume_step": 15
+    }
+  }
+}

@@ -1,0 +1,25 @@
+// See test.as.
+Swf(
+    version: 8,
+    frame_rate: 12,
+    tags: [
+        FileAttributes(),
+        SetBackgroundColor(0xFFFFFF),
+        DoAction(Rascal(file: "test.as")),
+        DefineVideoStream(
+            id: 1,
+            num_frames: 0,
+            width: 160,
+            height: 120,
+            codec: None,
+        ),
+        PlaceObject2(
+            depth: 1,
+            character: 1,
+            matrix: (translate_x: 190.95, translate_y: 147),
+            name: "the_video",
+        ),
+        ShowFrame,
+        End,
+    ],
+)

@@ -1,0 +1,10 @@
+{
+ "AppPersistenceManager": {
+  "AppsExist": "false"
+ },
+ "Persistency": {
+  "DisclaimerAccepted": {
+   "value": "false"
+  }
+ }
+}

@@ -1,0 +1,11 @@
+{
+  "tracksFolder": "/fs/mmc0/nav/tracks/",
+  "listings": {
+    "/fs/etfs/": {},
+    "/fs/mmc1/": {},
+    "/fs/mmc1/flags/": {},
+    "/fs/mmc0/nav/": {},
+    "/fs/data/flags/nav/": {},
+    "/fs/mmc0/nav/tracks/": {}
+  }
+}

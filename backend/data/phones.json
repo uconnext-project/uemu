@@ -1,0 +1,410 @@
+{
+ "headName": "Uconnect",
+ "headAddress": "00:1E:AE:4C:91:07",
+ "pin": "1234",
+ "carrier": {
+  "operatorCode": "311480",
+  "operatorLongName": "Verizon Wireless",
+  "operatorShortName": "Verizon",
+  "operatorMode": "automatic",
+  "operatorAccTech": "LTE"
+ },
+ "signal": 18,
+ "battery": 4,
+ "subscriberNumber": "3135550100",
+ "phones": [
+  {
+   "address": "A4:C1:38:5E:22:7B",
+   "name": "Pixel 8",
+   "hfp": true,
+   "a2dp": true,
+   "prio": 1
+  },
+  {
+   "address": "F0:99:B6:12:4A:9C",
+   "name": "Sarah's iPhone",
+   "hfp": false,
+   "a2dp": false,
+   "prio": 2
+  }
+ ],
+ "contacts": [
+  {
+   "givenName": "Amanda",
+   "familyName": "Moore",
+   "formattedName": "Amanda Moore",
+   "mobileNumber": "2485550185",
+   "homeNumber": "",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 1
+  },
+  {
+   "givenName": "Ashley",
+   "familyName": "Taylor",
+   "formattedName": "Ashley Taylor",
+   "mobileNumber": "3135550196",
+   "homeNumber": "",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 2
+  },
+  {
+   "givenName": "Brian",
+   "familyName": "Thomas",
+   "formattedName": "Brian Thomas",
+   "mobileNumber": "9475550108",
+   "homeNumber": "",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 3
+  },
+  {
+   "givenName": "Chris",
+   "familyName": "Martinez",
+   "formattedName": "Chris Martinez",
+   "mobileNumber": "5865550129",
+   "homeNumber": "",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 4
+  },
+  {
+   "givenName": "Dad",
+   "familyName": "",
+   "formattedName": "Dad",
+   "mobileNumber": "3135550143",
+   "homeNumber": "3135550188",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 5
+  },
+  {
+   "givenName": "David",
+   "familyName": "Wilson",
+   "formattedName": "David Wilson",
+   "mobileNumber": "7345550134",
+   "homeNumber": "",
+   "workNumber": "7345550900",
+   "otherNumber": "",
+   "contactsId": 6
+  },
+  {
+   "givenName": "Dr. Patel",
+   "familyName": "Office",
+   "formattedName": "Dr. Patel Office",
+   "mobileNumber": "",
+   "homeNumber": "",
+   "workNumber": "2485550100",
+   "otherNumber": "",
+   "contactsId": 7
+  },
+  {
+   "givenName": "Emily",
+   "familyName": "Davis",
+   "formattedName": "Emily Davis",
+   "mobileNumber": "3135550174",
+   "homeNumber": "",
+   "workNumber": "3135550600",
+   "otherNumber": "",
+   "contactsId": 8
+  },
+  {
+   "givenName": "Grandma",
+   "familyName": "",
+   "formattedName": "Grandma",
+   "mobileNumber": "",
+   "homeNumber": "3135550177",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 9
+  },
+  {
+   "givenName": "Jason",
+   "familyName": "Harris",
+   "formattedName": "Jason Harris",
+   "mobileNumber": "7345550158",
+   "homeNumber": "7345550159",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 10
+  },
+  {
+   "givenName": "Jessica",
+   "familyName": "Brown",
+   "formattedName": "Jessica Brown",
+   "mobileNumber": "2485550151",
+   "homeNumber": "2485550152",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 11
+  },
+  {
+   "givenName": "Joe's",
+   "familyName": "Pizza",
+   "formattedName": "Joe's Pizza",
+   "mobileNumber": "",
+   "homeNumber": "",
+   "workNumber": "3135550111",
+   "otherNumber": "",
+   "contactsId": 12
+  },
+  {
+   "givenName": "Kevin",
+   "familyName": "Jackson",
+   "formattedName": "Kevin Jackson",
+   "mobileNumber": "3135550121",
+   "homeNumber": "",
+   "workNumber": "3135550700",
+   "otherNumber": "",
+   "contactsId": 13
+  },
+  {
+   "givenName": "Lauren",
+   "familyName": "White",
+   "formattedName": "Lauren White",
+   "mobileNumber": "5865550147",
+   "homeNumber": "",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 14
+  },
+  {
+   "givenName": "Megan",
+   "familyName": "Clark",
+   "formattedName": "Megan Clark",
+   "mobileNumber": "2485550133",
+   "homeNumber": "",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 15
+  },
+  {
+   "givenName": "Mike",
+   "familyName": "Anderson",
+   "formattedName": "Mike Anderson",
+   "mobileNumber": "7345550163",
+   "homeNumber": "",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 16
+  },
+  {
+   "givenName": "Mom",
+   "familyName": "",
+   "formattedName": "Mom",
+   "mobileNumber": "3135550142",
+   "homeNumber": "3135550188",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 17
+  },
+  {
+   "givenName": "Nicole",
+   "familyName": "Walker",
+   "formattedName": "Nicole Walker",
+   "mobileNumber": "9475550172",
+   "homeNumber": "",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 18
+  },
+  {
+   "givenName": "Rachel",
+   "familyName": "King",
+   "formattedName": "Rachel King",
+   "mobileNumber": "7345550145",
+   "homeNumber": "",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 19
+  },
+  {
+   "givenName": "Ryan",
+   "familyName": "Lewis",
+   "formattedName": "Ryan Lewis",
+   "mobileNumber": "3135550166",
+   "homeNumber": "",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 20
+  },
+  {
+   "givenName": "Sarah",
+   "familyName": "Johnson",
+   "formattedName": "Sarah Johnson",
+   "mobileNumber": "2485550117",
+   "homeNumber": "",
+   "workNumber": "2485550190",
+   "otherNumber": "",
+   "contactsId": 21
+  },
+  {
+   "givenName": "Tom",
+   "familyName": "Young",
+   "formattedName": "Tom Young",
+   "mobileNumber": "5865550199",
+   "homeNumber": "",
+   "workNumber": "",
+   "otherNumber": "",
+   "contactsId": 22
+  }
+ ],
+ "favorites": [
+  {
+   "favIndex": 1,
+   "formattedName": "Mom",
+   "givenName": "Mom",
+   "familyName": "",
+   "workNumber": "",
+   "homeNumber": "",
+   "mobileNumber": "3135550142",
+   "otherNumber": "",
+   "contactsId": 100
+  },
+  {
+   "favIndex": 2,
+   "formattedName": "Sarah Johnson",
+   "givenName": "Sarah Johnson",
+   "familyName": "",
+   "workNumber": "",
+   "homeNumber": "",
+   "mobileNumber": "2485550117",
+   "otherNumber": "",
+   "contactsId": 101
+  },
+  {
+   "favIndex": 3,
+   "formattedName": "Mike Anderson",
+   "givenName": "Mike Anderson",
+   "familyName": "",
+   "workNumber": "",
+   "homeNumber": "",
+   "mobileNumber": "7345550163",
+   "otherNumber": "",
+   "contactsId": 102
+  },
+  {
+   "favIndex": 6,
+   "formattedName": "Emergency",
+   "givenName": "Emergency",
+   "familyName": "",
+   "workNumber": "",
+   "homeNumber": "",
+   "mobileNumber": "",
+   "otherNumber": "911",
+   "contactsId": 103
+  },
+  {
+   "favIndex": 7,
+   "formattedName": "Towing Assistance",
+   "givenName": "Towing Assistance",
+   "familyName": "",
+   "workNumber": "",
+   "homeNumber": "",
+   "mobileNumber": "",
+   "otherNumber": "8005212779",
+   "contactsId": 104
+  }
+ ],
+ "history": [
+  {
+   "type": "MC",
+   "number": "3135550142",
+   "minutesAgo": 14
+  },
+  {
+   "type": "RC",
+   "number": "2485550117",
+   "minutesAgo": 52
+  },
+  {
+   "type": "DC",
+   "number": "7345550163",
+   "minutesAgo": 95
+  },
+  {
+   "type": "DC",
+   "number": "3135550111",
+   "minutesAgo": 180
+  },
+  {
+   "type": "RC",
+   "number": "3135550143",
+   "minutesAgo": 300
+  },
+  {
+   "type": "MC",
+   "number": "8885550123",
+   "minutesAgo": 420
+  },
+  {
+   "type": "DC",
+   "number": "2485550151",
+   "minutesAgo": 1500
+  },
+  {
+   "type": "RC",
+   "number": "3135550174",
+   "minutesAgo": 1620
+  },
+  {
+   "type": "DC",
+   "number": "3135550142",
+   "minutesAgo": 2900
+  },
+  {
+   "type": "MC",
+   "number": "5865550129",
+   "minutesAgo": 3100
+  },
+  {
+   "type": "RC",
+   "number": "7345550134",
+   "minutesAgo": 4400
+  },
+  {
+   "type": "DC",
+   "number": "2485550100",
+   "minutesAgo": 5800
+  }
+ ],
+ "sms": [
+  {
+   "name": "Mom",
+   "from": "3135550142",
+   "body": "Dinner at 6 tonight? Bring the kids!",
+   "minutesAgo": 9,
+   "read": false
+  },
+  {
+   "name": "Sarah Johnson",
+   "from": "2485550117",
+   "body": "Running 10 min late, save me a seat",
+   "minutesAgo": 41,
+   "read": false
+  },
+  {
+   "name": "Mike Anderson",
+   "from": "7345550163",
+   "body": "Got the tickets for Saturday's game",
+   "minutesAgo": 130,
+   "read": true
+  },
+  {
+   "name": "",
+   "from": "8885550123",
+   "body": "Your package was delivered. Reply STOP to opt out.",
+   "minutesAgo": 600,
+   "read": true
+  },
+  {
+   "name": "Chris Martinez",
+   "from": "5865550129",
+   "body": "Can you send me the address again?",
+   "minutesAgo": 1440,
+   "read": true
+  }
+ ],
+ "lastDialed": "3135550111"
+}
