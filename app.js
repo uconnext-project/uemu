@@ -3,7 +3,7 @@
  *
  * Open the page with:
  *
- *     ?app=/hmi/main.xml   (default)
+ *     ?app=hmi/main.xml   (default, relative to the page)
  *
  * `?url=` works as an alias for `?app=`. The URL may point at an AIR
  * descriptor (`.xml`) or directly at a SWF.
@@ -17,7 +17,7 @@ import {
     onAudioStatus,
 } from "./backend/lib/audio.js";
 
-const DEFAULT_APP = "/hmi/main.xml";
+const DEFAULT_APP = "hmi/main.xml";
 const PERSISTENCY_KEY = "air-browser-port:persistency";
 const MAX_LOG_LINES = 500;
 const TABS = ["flash", "backend"];
