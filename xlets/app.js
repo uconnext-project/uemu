@@ -110,14 +110,19 @@ function notesFor(app, variant) {
       "SRT variant: pcrt.srtPresent=true is set (the JAR only ships the SRT resources).",
     );
   }
-  if (app.headless) notes.push("Headless xlet — the window may stay empty; check the logs.");
-  notes.push("Sensors are simulated (no CAN/PPS); online services may not answer.");
+  if (app.headless)
+    notes.push("Headless xlet — the window may stay empty; check the logs.");
+  notes.push(
+    "Sensors are simulated (no CAN/PPS); online services may not answer.",
+  );
   return notes.join(" ");
 }
 
 function defaultVariant(app) {
   if (!app?.variants?.length) return null;
-  return app.variants.find((v) => v.key === app.defaultVariant) || app.variants[0];
+  return (
+    app.variants.find((v) => v.key === app.defaultVariant) || app.variants[0]
+  );
 }
 
 /* ------------------------------------------------------------------ catalog */
@@ -233,9 +238,11 @@ function javaProperties(app, variant) {
   return properties;
 }
 
-/** `/app/` is mapped to the parent of this page (overrideDocumentBase); the runtime lives under `xlets/`. */
+const XLETS_BASE = new URL("../", location.href).href;
+
 function runtimePath(relative) {
-  return `/app/xlets/${relative.replace(/^\/+/, "")}`;
+  return new URL(`../xlets/${relative.replace(/^\/+/, "")}`, location.href)
+    .href;
 }
 
 async function launch(app, variant) {
@@ -295,7 +302,10 @@ async function launch(app, variant) {
   } catch (error) {
     console.error(error);
     const message = error?.message || String(error);
-    setStatus("The xlet could not be launched — see the logs.", `Error: ${message}`);
+    setStatus(
+      "The xlet could not be launched — see the logs.",
+      `Error: ${message}`,
+    );
     post("error", { message });
   }
 }
@@ -323,7 +333,9 @@ async function boot() {
   }
 
   if (params.has("app")) {
-    const app = state.catalog.apps.find((entry) => entry.id === params.get("app"));
+    const app = state.catalog.apps.find(
+      (entry) => entry.id === params.get("app"),
+    );
     if (!app) {
       const message = "Unknown appId — not present in the KIM1 catalog.";
       setStatus(message, message);
