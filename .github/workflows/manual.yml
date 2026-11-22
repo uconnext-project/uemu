@@ -1,0 +1,74 @@
+name: Deploy from URL
+
+on:
+  workflow_dispatch:
+    inputs:
+      artifact_url:
+        description: Bezpośredni URL do archiwum ZIP z gotową stroną
+        required: true
+        type: string
+      auth_token:
+        description: Opcjonalny token (tylko gdy URL wymaga autoryzacji)
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Download and extract artifact
+        env:
+          ARTIFACT_URL: ${{ inputs.artifact_url }}
+          AUTH_TOKEN: ${{ inputs.auth_token }}
+        run: |
+          set -euo pipefail
+          SITE_DIR="$RUNNER_TEMP/site"
+          rm -rf "$SITE_DIR" && mkdir -p "$SITE_DIR"
+
+          CURL_ARGS=(-fsSL -o "$RUNNER_TEMP/artifact.zip")
+          if [ -n "$AUTH_TOKEN" ]; then
+            CURL_ARGS+=(-H "Authorization: Bearer $AUTH_TOKEN")
+          fi
+          curl "${CURL_ARGS[@]}" "$ARTIFACT_URL"
+
+          unzip -q "$RUNNER_TEMP/artifact.zip" -d "$SITE_DIR"
+
+          # Jeśli ZIP ma jeden katalog nadrzędny, przenieś jego zawartość do korzenia
+          if [ ! -f "$SITE_DIR/index.html" ]; then
+            SUBDIR=$(find "$SITE_DIR" -mindepth 1 -maxdepth 1 -type d | head -n 1)
+            if [ -n "$SUBDIR" ] && [ -f "$SUBDIR/index.html" ]; then
+              shopt -s dotglob
+              mv "$SUBDIR"/* "$SITE_DIR"/
+              rmdir "$SUBDIR"
+            fi
+          fi
+
+          if [ ! -f "$SITE_DIR/index.html" ]; then
+            echo "::error::Brak index.html w archiwum"
+            exit 1
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/site
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
