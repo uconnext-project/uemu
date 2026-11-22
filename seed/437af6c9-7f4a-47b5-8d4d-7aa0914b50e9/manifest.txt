@@ -1,0 +1,11 @@
+work:javaproxy.properties
+work:res/brand_ucon.res
+work:res/ico_ViaMobile_lrg.png
+work:res/ico_ViaMobile_sml.png
+work:res/loading.res
+work:res/main.res
+work:res/viamobile.res
+work:res/viamobile_setup_48x48.png
+work:res/viamobile_setup_80x80.png
+work:sensor_properties.json
+work:sensor_values.properties

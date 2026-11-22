@@ -1,0 +1,10 @@
+#ECO V1.2 UTF-8;
+# Columns:
+#Column1 Line_Number
+#Column2 Ortho
+#Column3 [Pho]
+#Format(Line_Number) Ident
+# ===Keys===
+#AppHelpText Después del pitido, diga algo como lavado de autos, o pizza
+#AppHelpPrompt Después del pitido, diga algo como lavado de autos, o pizza
+# === 

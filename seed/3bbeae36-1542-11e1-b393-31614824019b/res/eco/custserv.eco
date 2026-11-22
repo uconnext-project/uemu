@@ -1,0 +1,21 @@
+#ECO V1.2 UTF-8;
+# Columns:
+#Column1 Line_Number
+#Column2 Ortho
+#Column3 [Pho]
+#Format(Line_Number) Ident
+# ===Keys===
+#AppHelpText Press or Say one of the above
+#AppHelpPrompt Select a care option
+# === 
+
+1;"Roadside Assistance";
+1;"Roadside";
+2;"Uconnect Care";
+2;"Uconnect";
+3;"Vehicle Care";
+3;"Vehicle";
+4;"Exit";
+4;"Cancel";
+4;"Quit";
+4;"End";

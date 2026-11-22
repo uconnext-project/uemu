@@ -1,0 +1,12 @@
+work:javaproxy.properties
+work:res/brand_ucon.res
+work:res/ico_registration.png
+work:res/ico_registration_sml.png
+work:res/loading.res
+work:res/main.res
+work:res/registration_48x48.png
+work:res/registration_80x80.png
+work:res/uar_common.res
+work:sensor_properties.json
+work:sensor_values.properties
+rms:__rms/A7A4B215-9B5A-7DAA-457C-15545178E72F/com.sprint.chrysler.hur.subsinfo.rs

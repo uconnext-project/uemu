@@ -1,0 +1,506 @@
+{
+  "generatedAt": "2026-11-22T13:11:15+00:00",
+  "sourceRoot": "/run/media/michal/Michał karta SD/reverse_engineering/uconnect/extracted_updates/18.45.iso/v18secondary/usr/share/XLETS",
+  "kim": "KIM1",
+  "stats": {
+    "propertiesFiles": 13,
+    "apps": 13,
+    "variants": 13
+  },
+  "apps": [
+    {
+      "id": "c9dba9de-281b-41de-911c-e20bdd029de0",
+      "name": "aha",
+      "rawName": "aha",
+      "vendor": "Harman",
+      "version": "1.10.65",
+      "category": "6",
+      "mainClass": "com.harman.aha.cmc.AhaCmcXlet",
+      "jarFile": "c9dba9de-281b-41de-911c-e20bdd029de0.jar",
+      "icon": "res/apps-list-icon.png",
+      "conditions": "",
+      "short": "en_US:aha,fr_CA:aha,es_MX:aha",
+      "med": "en_US:aha,fr_CA:aha,es_MX:aha",
+      "nameString": "en_US:aha",
+      "headless": false,
+      "daemon": false,
+      "defaultVariant": "4385102b63",
+      "variants": [
+        {
+          "key": "4385102b63",
+          "version": "1.10.65",
+          "name": "aha",
+          "vendor": "Harman",
+          "category": "6",
+          "icon": "res/apps-list-icon.png",
+          "kim": "KIM1",
+          "packages": [
+            "KIM1"
+          ],
+          "source": "kim_packages/KIM1/xlets/c9dba9de-281b-41de-911c-e20bdd029de0/prog/jars/c9dba9de-281b-41de-911c-e20bdd029de0.jar",
+          "jar": "lib/apps/c9dba9de-281b-41de-911c-e20bdd029de0/4385102b63/jars/c9dba9de-281b-41de-911c-e20bdd029de0.jar",
+          "mainClass": "com.harman.aha.cmc.AhaCmcXlet",
+          "size": 843852,
+          "srt": false,
+          "vug": false
+        }
+      ]
+    },
+    {
+      "id": "3bbeae36-1542-11e1-b393-31614824019b",
+      "name": "ASSIST",
+      "rawName": "ASSIST",
+      "vendor": "Sprint",
+      "version": "04.00.09",
+      "category": "5",
+      "mainClass": "com.sprint.chrysler.assist.xlet.AssistXlet",
+      "jarFile": "3bbeae36-1542-11e1-b393-31614824019b.jar",
+      "icon": "/res/ico_assist_sml.png",
+      "conditions": "",
+      "short": "en_US:ASSIST,fr_CA:ASSIST,es_MX:AYUDA",
+      "med": "en_US:ASSIST,fr_CA:ASSIST,es_MX:AYUDA",
+      "nameString": "en_US:ASSIST,fr_CA:ASSIST,es_MX:AYUDA",
+      "headless": false,
+      "daemon": false,
+      "defaultVariant": "3aa5810b31",
+      "variants": [
+        {
+          "key": "3aa5810b31",
+          "version": "04.00.09",
+          "name": "ASSIST",
+          "vendor": "Sprint",
+          "category": "5",
+          "icon": "/res/ico_assist_sml.png",
+          "kim": "KIM1",
+          "packages": [
+            "KIM1"
+          ],
+          "source": "kim_packages/KIM1/xlets/3bbeae36-1542-11e1-b393-31614824019b/prog/jars/3bbeae36-1542-11e1-b393-31614824019b.jar",
+          "jar": "lib/apps/3bbeae36-1542-11e1-b393-31614824019b/3aa5810b31/jars/3bbeae36-1542-11e1-b393-31614824019b.jar",
+          "mainClass": "com.sprint.chrysler.assist.xlet.AssistXlet",
+          "size": 1891758,
+          "srt": false,
+          "vug": false
+        }
+      ]
+    },
+    {
+      "id": "d0412192-c51d-476c-91e0-76fc65a82692",
+      "name": "iHeart",
+      "rawName": "iHeart",
+      "vendor": "Tweddle",
+      "version": "0.8.4991",
+      "category": "6",
+      "mainClass": "com.tweddle.iheart.IHeartPlayerXlet",
+      "jarFile": "d0412192-c51d-476c-91e0-76fc65a82692.jar",
+      "icon": "res/icon.png",
+      "conditions": "",
+      "short": "en_US:iHeart,fr_CA:iHeart,es_MX:iHeart",
+      "med": "en_US:iHeart,es_MX:iHeart,fr_CA:iHeart",
+      "nameString": "en_US:iHeart,es_MX:iHeart,fr_CA:iHeart",
+      "headless": false,
+      "daemon": false,
+      "defaultVariant": "587c06e215",
+      "variants": [
+        {
+          "key": "587c06e215",
+          "version": "0.8.4991",
+          "name": "iHeart",
+          "vendor": "Tweddle",
+          "category": "6",
+          "icon": "res/icon.png",
+          "kim": "KIM1",
+          "packages": [
+            "KIM1"
+          ],
+          "source": "kim_packages/KIM1/xlets/d0412192-c51d-476c-91e0-76fc65a82692/prog/jars/d0412192-c51d-476c-91e0-76fc65a82692.jar",
+          "jar": "lib/apps/d0412192-c51d-476c-91e0-76fc65a82692/587c06e215/jars/d0412192-c51d-476c-91e0-76fc65a82692.jar",
+          "mainClass": "com.tweddle.iheart.IHeartPlayerXlet",
+          "size": 1602456,
+          "srt": false,
+          "vug": false
+        }
+      ]
+    },
+    {
+      "id": "186c8aa0-6175-11e1-b86c-0800200c9a66",
+      "name": "Pandora",
+      "rawName": "Pandora",
+      "vendor": "Harman",
+      "version": "1.0.120",
+      "category": "6",
+      "mainClass": "com.harman.app.pandora.PandoraXlet",
+      "jarFile": "186c8aa0-6175-11e1-b86c-0800200c9a66.jar",
+      "icon": "/res/icon.png",
+      "conditions": "",
+      "short": "en_US:Pandora,fr_CA:Pandora,es_MX:Pandora",
+      "med": "en_US:Pandora,fr_CA:Pandora,es_MX:Pandora",
+      "nameString": "en_US:Pandora",
+      "headless": false,
+      "daemon": false,
+      "defaultVariant": "1892073c7c",
+      "variants": [
+        {
+          "key": "1892073c7c",
+          "version": "1.0.120",
+          "name": "Pandora",
+          "vendor": "Harman",
+          "category": "6",
+          "icon": "/res/icon.png",
+          "kim": "KIM1",
+          "packages": [
+            "KIM1"
+          ],
+          "source": "kim_packages/KIM1/xlets/186c8aa0-6175-11e1-b86c-0800200c9a66/prog/jars/186c8aa0-6175-11e1-b86c-0800200c9a66.jar",
+          "jar": "lib/apps/186c8aa0-6175-11e1-b86c-0800200c9a66/1892073c7c/jars/186c8aa0-6175-11e1-b86c-0800200c9a66.jar",
+          "mainClass": "com.harman.app.pandora.PandoraXlet",
+          "size": 567021,
+          "srt": false,
+          "vug": false
+        }
+      ]
+    },
+    {
+      "id": "7DEC7834-535D-47B5-BD33-695477EDCD57",
+      "name": "Performance Pages",
+      "rawName": "Performance Pages",
+      "vendor": "Sprint",
+      "version": "02.00.08",
+      "category": "2",
+      "mainClass": "com.sprint.gskills.xlet.GSkillsXlet",
+      "jarFile": "7DEC7834-535D-47B5-BD33-695477EDCD57.jar",
+      "icon": "/icons/lseries.png",
+      "conditions": "/pps/can/vehcfg/VC_PP_Prsnt:1,/pps/can/vehcfg/VC_VEH_LINE:{44;41;2}",
+      "short": "en_US:Perform,fr_CA:Perform,es_MX:Perform",
+      "med": "en_US:Perform\nPages,fr_CA:Perform\nPages,es_MX:Perform\nPages",
+      "nameString": "en_US:Performance Pages,fr_CA:Performance Pages,es_MX:Performance Pages",
+      "headless": false,
+      "daemon": false,
+      "defaultVariant": "3c8e646d85",
+      "variants": [
+        {
+          "key": "3c8e646d85",
+          "version": "02.00.08",
+          "name": "Performance Pages",
+          "vendor": "Sprint",
+          "category": "2",
+          "icon": "/icons/lseries.png",
+          "kim": "KIM1",
+          "packages": [
+            "KIM1"
+          ],
+          "source": "kim_packages/KIM1/xlets/7DEC7834-535D-47B5-BD33-695477EDCD57/prog/jars/7DEC7834-535D-47B5-BD33-695477EDCD57.jar",
+          "jar": "lib/apps/7DEC7834-535D-47B5-BD33-695477EDCD57/3c8e646d85/jars/7DEC7834-535D-47B5-BD33-695477EDCD57.jar",
+          "mainClass": "com.sprint.gskills.xlet.GSkillsXlet",
+          "size": 21899303,
+          "srt": false,
+          "vug": false
+        }
+      ]
+    },
+    {
+      "id": "A7A4B215-9B5A-7DAA-457C-15545178E72F",
+      "name": "Register",
+      "rawName": "Register",
+      "vendor": "Sprint",
+      "version": "02.02.05",
+      "category": "5",
+      "mainClass": "com.sprint.chrysler.uar.xlet.UconnectRegistrationXlet",
+      "jarFile": "A7A4B215-9B5A-7DAA-457C-15545178E72F.jar",
+      "icon": "/res/ico_registration_sml.png",
+      "conditions": "",
+      "short": "en_US:Register,fr_CA:Inscript,es_MX:Registro",
+      "med": "en_US:Register,fr_CA:Inscript,es_MX:Registro",
+      "nameString": "en_US:Register,fr_CA:Inscript,es_MX:Registro",
+      "headless": false,
+      "daemon": false,
+      "defaultVariant": "db10a74858",
+      "variants": [
+        {
+          "key": "db10a74858",
+          "version": "02.02.05",
+          "name": "Register",
+          "vendor": "Sprint",
+          "category": "5",
+          "icon": "/res/ico_registration_sml.png",
+          "kim": "KIM1",
+          "packages": [
+            "KIM1"
+          ],
+          "source": "kim_packages/KIM1/xlets/A7A4B215-9B5A-7DAA-457C-15545178E72F/prog/jars/A7A4B215-9B5A-7DAA-457C-15545178E72F.jar",
+          "jar": "lib/apps/A7A4B215-9B5A-7DAA-457C-15545178E72F/db10a74858/jars/A7A4B215-9B5A-7DAA-457C-15545178E72F.jar",
+          "mainClass": "com.sprint.chrysler.uar.xlet.UconnectRegistrationXlet",
+          "size": 1634997,
+          "srt": false,
+          "vug": false
+        }
+      ]
+    },
+    {
+      "id": "05096915-cc7e-4881-b53e-278f6d799862",
+      "name": "Slacker",
+      "rawName": "Slacker",
+      "vendor": "Slacker Inc.",
+      "version": "1.0.76",
+      "category": "6",
+      "mainClass": "com.slacker.mobile.xlet.SlackerRadio",
+      "jarFile": "05096915-cc7e-4881-b53e-278f6d799862.jar",
+      "icon": "res/images/app-ico-large.png",
+      "conditions": "",
+      "short": "en_US:Slacker,fr_CA:Slacker,es_MX:Slacker",
+      "med": "en_US:Slacker,fr_CA:Slacker,es_MX:Slacker",
+      "nameString": "en_US:Slacker",
+      "headless": false,
+      "daemon": false,
+      "defaultVariant": "329098c01c",
+      "variants": [
+        {
+          "key": "329098c01c",
+          "version": "1.0.76",
+          "name": "Slacker",
+          "vendor": "Slacker Inc.",
+          "category": "6",
+          "icon": "res/images/app-ico-large.png",
+          "kim": "KIM1",
+          "packages": [
+            "KIM1"
+          ],
+          "source": "kim_packages/KIM1/xlets/05096915-cc7e-4881-b53e-278f6d799862/prog/jars/05096915-cc7e-4881-b53e-278f6d799862.jar",
+          "jar": "lib/apps/05096915-cc7e-4881-b53e-278f6d799862/329098c01c/jars/05096915-cc7e-4881-b53e-278f6d799862.jar",
+          "mainClass": "com.slacker.mobile.xlet.SlackerRadio",
+          "size": 925156,
+          "srt": false,
+          "vug": false
+        }
+      ]
+    },
+    {
+      "id": "52c79381-6719-11e1-b86c-0800200c9a66",
+      "name": "SRT Performance Pages",
+      "rawName": "Performance Pages",
+      "vendor": "Sprint",
+      "version": "01.22.06",
+      "category": "2",
+      "mainClass": "com.sprint.gskills.xlet.GSkillsXlet",
+      "jarFile": "52c79381-6719-11e1-b86c-0800200c9a66.jar",
+      "icon": "/GSkills.SRT.icon.PNG",
+      "conditions": "/pps/can/vehcfg/VC_PP_Prsnt:1,/pps/can/vehcfg/VC_VEH_LINE:43",
+      "short": "en_US:Perform,fr_CA:Perform,es_MX:Perform",
+      "med": "en_US:Perform\nPages,fr_CA:Perform\nPages,es_MX:Perform\nPages",
+      "nameString": "en_US:SRT Performance Pages,fr_CA:SRT Performance Pages,es_MX:SRT Performance Pages",
+      "headless": false,
+      "daemon": false,
+      "defaultVariant": "d5bd28e559",
+      "variants": [
+        {
+          "key": "d5bd28e559",
+          "version": "01.22.06",
+          "name": "SRT Performance Pages",
+          "vendor": "Sprint",
+          "category": "2",
+          "icon": "/GSkills.SRT.icon.PNG",
+          "kim": "KIM1",
+          "packages": [
+            "KIM1"
+          ],
+          "source": "kim_packages/KIM1/xlets/52c79381-6719-11e1-b86c-0800200c9a66/prog/jars/52c79381-6719-11e1-b86c-0800200c9a66.jar",
+          "jar": "lib/apps/52c79381-6719-11e1-b86c-0800200c9a66/d5bd28e559/jars/52c79381-6719-11e1-b86c-0800200c9a66.jar",
+          "mainClass": "com.sprint.gskills.xlet.GSkillsXlet",
+          "size": 7555478,
+          "srt": true,
+          "vug": false
+        }
+      ]
+    },
+    {
+      "id": "6BFD02C0-40C3-11E2-A25F-0800200C9A66",
+      "name": "SRT Performance Pages",
+      "rawName": "SRT Performance Pages",
+      "vendor": "Sprint",
+      "version": "02.00.14",
+      "category": "2",
+      "mainClass": "com.sprint.gskills.xlet.GSkillsXlet",
+      "jarFile": "6BFD02C0-40C3-11E2-A25F-0800200C9A66.jar",
+      "icon": "/icons/srt.png",
+      "conditions": "/pps/can/vehcfg/VC_PP_Prsnt:1,/pps/can/vehcfg/VC_VEH_LINE:1",
+      "short": "en_US:Perform,fr_CA:Perform,es_MX:Perform",
+      "med": "en_US:Perform\nPages,fr_CA:Perform\nPages,es_MX:Perform\nPages",
+      "nameString": "en_US:SRT Performance Pages,fr_CA:SRT Performance Pages,es_MX:SRT Performance Pages",
+      "headless": false,
+      "daemon": false,
+      "defaultVariant": "60701dbec8",
+      "variants": [
+        {
+          "key": "60701dbec8",
+          "version": "02.00.14",
+          "name": "SRT Performance Pages",
+          "vendor": "Sprint",
+          "category": "2",
+          "icon": "/icons/srt.png",
+          "kim": "KIM1",
+          "packages": [
+            "KIM1"
+          ],
+          "source": "kim_packages/KIM1/xlets/6BFD02C0-40C3-11E2-A25F-0800200C9A66/prog/jars/6BFD02C0-40C3-11E2-A25F-0800200C9A66.jar",
+          "jar": "lib/apps/6BFD02C0-40C3-11E2-A25F-0800200C9A66/60701dbec8/jars/6BFD02C0-40C3-11E2-A25F-0800200C9A66.jar",
+          "mainClass": "com.sprint.gskills.xlet.GSkillsXlet",
+          "size": 4899638,
+          "srt": true,
+          "vug": false
+        }
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "Store",
+      "rawName": "Store",
+      "vendor": "Sprint",
+      "version": "02.33.02",
+      "category": "5",
+      "mainClass": "com.sprint.chrysler.storefront.xlet.StorefrontXlet",
+      "jarFile": "550e8400-e29b-41d4-a716-446655440000.jar",
+      "icon": "/res/ico_uconnectstore_sml.png",
+      "conditions": "",
+      "short": "en_US:Store,fr_CA:Boutique,es_MX:Tienda",
+      "med": "en_US:Store,fr_CA:Boutique,es_MX:Tienda",
+      "nameString": "en_US:Store,fr_CA:Boutique,es_MX:Tienda",
+      "headless": false,
+      "daemon": false,
+      "defaultVariant": "228f353515",
+      "variants": [
+        {
+          "key": "228f353515",
+          "version": "02.33.02",
+          "name": "Store",
+          "vendor": "Sprint",
+          "category": "5",
+          "icon": "/res/ico_uconnectstore_sml.png",
+          "kim": "KIM1",
+          "packages": [
+            "KIM1"
+          ],
+          "source": "kim_packages/KIM1/xlets/550e8400-e29b-41d4-a716-446655440000/prog/jars/550e8400-e29b-41d4-a716-446655440000.jar",
+          "jar": "lib/apps/550e8400-e29b-41d4-a716-446655440000/228f353515/jars/550e8400-e29b-41d4-a716-446655440000.jar",
+          "mainClass": "com.sprint.chrysler.storefront.xlet.StorefrontXlet",
+          "size": 1827686,
+          "srt": false,
+          "vug": false
+        }
+      ]
+    },
+    {
+      "id": "079aa169-df8f-48b4-b331-4ed51dbf6b12",
+      "name": "Vehicle User Guide",
+      "rawName": "Vehicle User Guide",
+      "vendor": "Tweddle",
+      "version": "1.0.4",
+      "category": "2",
+      "mainClass": "com.tweddle.help.HUXlet",
+      "jarFile": "079aa169-df8f-48b4-b331-4ed51dbf6b12.jar",
+      "icon": "res/IVH_app_icon_43x43.png",
+      "conditions": "/pps/can/vehcfg/VC_VEH_LINE:{44;41;2;45}",
+      "short": "en_US:Guide,fr_CA:Guide,es_MX:Guía",
+      "med": "en_US:User Guide,fr_CA:Guide de Véhicule,es_MX:Guía del Usuario",
+      "nameString": "en_US:Vehicle User Guide,fr_CA:Notice D'utilisation du Véhicule,es_MX:Guía de Usuario del Vehículo",
+      "headless": false,
+      "daemon": false,
+      "defaultVariant": "382026942a",
+      "variants": [
+        {
+          "key": "382026942a",
+          "version": "1.0.4",
+          "name": "Vehicle User Guide",
+          "vendor": "Tweddle",
+          "category": "2",
+          "icon": "res/IVH_app_icon_43x43.png",
+          "kim": "KIM1",
+          "packages": [
+            "KIM1"
+          ],
+          "source": "kim_packages/KIM1/xlets/079aa169-df8f-48b4-b331-4ed51dbf6b12/prog/jars/079aa169-df8f-48b4-b331-4ed51dbf6b12.jar",
+          "jar": "lib/apps/079aa169-df8f-48b4-b331-4ed51dbf6b12/382026942a/jars/079aa169-df8f-48b4-b331-4ed51dbf6b12.jar",
+          "mainClass": "com.tweddle.help.HUXlet",
+          "size": 1558076,
+          "srt": false,
+          "vug": true
+        }
+      ]
+    },
+    {
+      "id": "437af6c9-7f4a-47b5-8d4d-7aa0914b50e9",
+      "name": "Via Mobile App Setup",
+      "rawName": "Via Mobile App Setup",
+      "vendor": "Sprint",
+      "version": "01.00.05",
+      "category": "5",
+      "mainClass": "com.sprint.chrysler.setup.xlet.ViaMobileSetupXlet",
+      "jarFile": "437af6c9-7f4a-47b5-8d4d-7aa0914b50e9.jar",
+      "icon": "/res/ico_ViaMobile_sml.png",
+      "conditions": "",
+      "short": "en_US:Setup,fr_CA:Config,es_MX:Config",
+      "med": "en_US:App\nSetup,fr_CA:Config\nde Apps,es_MX:Config\nApps",
+      "nameString": "en_US:Via Mobile App Setup,fr_CA:Configuration de Via Mobile,es_MX:Configurar app Via Mobile",
+      "headless": false,
+      "daemon": false,
+      "defaultVariant": "331eef5fa1",
+      "variants": [
+        {
+          "key": "331eef5fa1",
+          "version": "01.00.05",
+          "name": "Via Mobile App Setup",
+          "vendor": "Sprint",
+          "category": "5",
+          "icon": "/res/ico_ViaMobile_sml.png",
+          "kim": "KIM1",
+          "packages": [
+            "KIM1"
+          ],
+          "source": "kim_packages/KIM1/xlets/437af6c9-7f4a-47b5-8d4d-7aa0914b50e9/prog/jars/437af6c9-7f4a-47b5-8d4d-7aa0914b50e9.jar",
+          "jar": "lib/apps/437af6c9-7f4a-47b5-8d4d-7aa0914b50e9/331eef5fa1/jars/437af6c9-7f4a-47b5-8d4d-7aa0914b50e9.jar",
+          "mainClass": "com.sprint.chrysler.setup.xlet.ViaMobileSetupXlet",
+          "size": 1535060,
+          "srt": false,
+          "vug": false
+        }
+      ]
+    },
+    {
+      "id": "1D5347C0-8B5E-11E2-9E96-0800200C9A66",
+      "name": "Yelp",
+      "rawName": "Yelp",
+      "vendor": "Tweddle",
+      "version": "0.9.4799",
+      "category": "2",
+      "mainClass": "com.tweddle.yelp.HUXlet",
+      "jarFile": "yelp_embedded_10.r4799-FIT.jar",
+      "icon": "res/icon.png",
+      "conditions": "",
+      "short": "en_US:Yelp,es_MX:Yelp,fr_CA:Yelp",
+      "med": "en_US:Yelp,es_MX:Yelp,fr_CA:Yelp",
+      "nameString": "en_US:Yelp,es_MX:Yelp,fr_CA:Yelp",
+      "headless": false,
+      "daemon": false,
+      "defaultVariant": "6387e02927",
+      "variants": [
+        {
+          "key": "6387e02927",
+          "version": "0.9.4799",
+          "name": "Yelp",
+          "vendor": "Tweddle",
+          "category": "2",
+          "icon": "res/icon.png",
+          "kim": "KIM1",
+          "packages": [
+            "KIM1"
+          ],
+          "source": "kim_packages/KIM1/xlets/1D5347C0-8B5E-11E2-9E96-0800200C9A66/prog/jars/yelp_embedded_10.r4799-FIT.jar",
+          "jar": "lib/apps/1D5347C0-8B5E-11E2-9E96-0800200C9A66/6387e02927/jars/yelp_embedded_10.r4799-FIT.jar",
+          "mainClass": "com.tweddle.yelp.HUXlet",
+          "size": 1182045,
+          "srt": false,
+          "vug": false
+        }
+      ]
+    }
+  ]
+}

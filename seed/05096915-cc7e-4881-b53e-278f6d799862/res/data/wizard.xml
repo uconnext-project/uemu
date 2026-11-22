@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wizard>
+	<steps>
+		<!-- Yes/No -->
+
+		<step id="1">
+			<message key="wizard1" default="Check the connected smartphone settings. Is Bluetooth enabled?" />
+			<buttons>
+				<button type="ok" />
+				<button type="more" link="2" />
+			</buttons>
+		</step>
+		<step id="2">
+			<message key="wizard2"
+				default="Check the connected smartphone settings. Is data enabled?" />
+			<buttons>
+				<button type="next" link="4" />
+				<button type="more" link="3" />
+				<button type="exit"/>
+			</buttons>
+		</step>
+		<step id="3">
+			<message key="wizard3"
+				default="Does the connected smartphone have the Uconnect Access App installed?" />
+			<buttons>
+				<button type="back" link="2" />
+				<button type="exit"/>
+			</buttons>
+		</step>
+		<step id="4">
+			<message key="wizard4"
+				default="Is the Uconnect Access App enabled for via Mobile Apps?" />
+			<buttons>
+				<button type="next" link="6" />
+				<button type="more" link="5" />
+				<button type="exit"/>
+			</buttons>
+		</step>
+		<step id="5">
+			<message key="wizard5" default="For further assistance with the Uconnect Access via Mobile Apps,go to moparownercenter.com" />
+			<buttons>
+				<button type="back" link="4" />
+				<button type="exit"/>
+			</buttons>
+		</step>
+		
+		<step id="6">
+			<message key="wizard6"
+				default="If you have a Anrdoid smartphone, pair it with Bluetooth in phone settings. If you have an iPhone, connect it with the USB port." />
+			<buttons>
+				<button type="more" link="7"/>
+				<button type="exit" />
+			</buttons>
+		</step>
+		<step id="7">
+			<message key="wizard7"
+				default="Your smartphone may have settings to enable data and network connections." />
+			<buttons>
+				<button type="back" link="6"/>
+				<button type="exit" />
+			</buttons>
+		</step>
+		<step id="8">
+			<message key="wizard8"
+				default="For more information about the Uconnect Access App,go to moparownercenter.com" />
+		</step>
+		
+
+	</steps>
+</wizard>

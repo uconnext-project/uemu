@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uconnect Xlet · KIM1</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cjrtnc.leaningtech.com/5.0/loader.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">UX</span>
+        <div>
+          <h1>Uconnect Xlet Web Runtime</h1>
+          <p>KIM1 package · Java 21 in the browser</p>
+        </div>
+      </div>
+      <span class="badge">CheerpJ 5.0</span>
+    </header>
+
+    <main id="catalogView" class="catalog">
+      <aside class="sidebar">
+        <label class="search-label" for="search">Search applications</label>
+        <input id="search" type="search" placeholder="name, vendor, appId…" autocomplete="off">
+        <div id="appList" class="app-list" role="listbox" aria-label="Xlet list"></div>
+        <p id="catalogInfo" class="catalog-info">Loading catalog…</p>
+      </aside>
+
+      <section class="detail">
+        <div class="detail-head">
+          <h2 id="detailTitle">Choose an xlet</h2>
+          <p id="detailMeta" class="muted">The KIM1 application JARs are staged unmodified.</p>
+        </div>
+
+        <div class="detail-grid">
+          <label class="field">
+            <span>JAR version</span>
+            <select id="variantSelect" disabled></select>
+          </label>
+          <label class="field">
+            <span>Application ID</span>
+            <input id="appIdField" type="text" readonly>
+          </label>
+          <label class="field">
+            <span>Main class</span>
+            <input id="mainClassField" type="text" readonly>
+          </label>
+          <label class="field">
+            <span>Vendor</span>
+            <input id="vendorField" type="text" readonly>
+          </label>
+        </div>
+
+        <div id="detailNotes" class="notes"></div>
+
+        <button id="launchBtn" class="primary" disabled>Launch xlet</button>
+        <label class="checkbox"><input id="debugToggle" type="checkbox"> debug mode (CheerpJ logs)</label>
+      </section>
+    </main>
+
+    <section id="runtimeView" class="runtime" hidden>
+      <div class="runtime-toolbar">
+        <div>
+          <h2 id="runtimeTitle">Xlet</h2>
+          <p id="runtimeStatus" class="status">Starting…</p>
+        </div>
+        <div class="runtime-actions">
+          <button id="restartBtn">Restart</button>
+          <button id="backBtn">Back to list</button>
+          <button id="logToggle">Show logs</button>
+        </div>
+      </div>
+      <div class="stage">
+        <div id="display" class="display"></div>
+        <div id="overlay" class="overlay">Loading the Java runtime…</div>
+      </div>
+      <pre id="log" class="log" hidden></pre>
+    </section>
+
+    <footer>
+      <span>Data: Uconnect 18.45 · only the KIM1 package is staged</span>
+      <span>Built with <a href="https://cheerpj.com/" target="_blank" rel="noopener">CheerpJ</a></span>
+    </footer>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

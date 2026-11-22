@@ -1,0 +1,344 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1016;
+  --panel: #131b24;
+  --panel-2: #18232f;
+  --line: #263544;
+  --text: #e6edf3;
+  --muted: #8fa3b5;
+  --accent: #41c8c8;
+  --accent-dark: #1d7f83;
+  --warn: #f0b35b;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% -10%, #1b3442 0, var(--bg) 55%);
+  color: var(--text);
+}
+
+.shell {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  padding: 22px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 18px;
+}
+
+.topbar, .runtime-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand { display: flex; align-items: center; gap: 14px; }
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: linear-gradient(140deg, var(--accent), var(--accent-dark));
+  color: #042022;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+h1, h2 { margin: 0; }
+h1 { font-size: 20px; font-weight: 650; }
+h2 { font-size: 18px; font-weight: 650; }
+p { margin: 4px 0 0; }
+.muted { color: var(--muted); font-size: 13px; }
+
+.badge {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: .04em;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 18px;
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar, .detail, .runtime {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.sidebar { display: flex; flex-direction: column; min-height: 520px; }
+
+.kim-filter { margin-bottom: 14px; }
+
+.search-label, .field > span {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+
+input[type="search"], input[type="text"], select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+}
+
+input:focus, select:focus { outline: 2px solid var(--accent-dark); outline-offset: 1px; }
+
+.app-list {
+  margin-top: 12px;
+  flex: 1;
+  overflow-y: auto;
+  max-height: 58vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.app-item {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-item:hover { background: var(--panel-2); }
+.app-item.selected { border-color: var(--accent-dark); background: #143035; }
+.app-item .name { font-size: 14px; }
+.app-item .meta { font-size: 11px; color: var(--muted); }
+.app-item .count {
+  font-size: 11px;
+  color: var(--accent);
+  border: 1px solid var(--accent-dark);
+  border-radius: 999px;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+.catalog-info { font-size: 12px; color: var(--muted); }
+
+.detail { display: flex; flex-direction: column; gap: 18px; }
+.detail-head { border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+}
+
+.notes {
+  min-height: 46px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent-dark);
+  background: var(--panel-2);
+  border-radius: 0 8px 8px 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+button {
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+
+button.primary {
+  align-self: flex-start;
+  background: linear-gradient(140deg, var(--accent), var(--accent-dark));
+  border: none;
+  color: #042022;
+  font-weight: 700;
+  padding: 11px 22px;
+}
+
+.checkbox { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+
+.runtime { display: flex; flex-direction: column; gap: 16px; align-items: center; }
+.runtime[hidden], .catalog[hidden] { display: none; }
+.runtime-toolbar { width: 100%; }
+.runtime-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.status { font-size: 13px; color: var(--warn); }
+
+.stage {
+  position: relative;
+  width: 640px;
+  height: 480px;
+  max-width: 100%;
+  background: #000;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.display { width: 640px; height: 480px; max-width: 100%; }
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(4, 10, 14, .82);
+  color: var(--accent);
+  font-size: 14px;
+  text-align: center;
+  padding: 24px;
+}
+
+.overlay[hidden] { display: none; }
+
+.log {
+  width: 100%;
+  max-height: 210px;
+  overflow: auto;
+  margin: 0;
+  padding: 12px;
+  background: #060b10;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: #a9c6c9;
+  font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+footer a { color: var(--accent); }
+
+@media (max-width: 860px) {
+  .catalog { grid-template-columns: 1fr; }
+  .sidebar { min-height: 300px; }
+  .detail-grid { grid-template-columns: 1fr; }
+}
+
+/* ------------------------------------------------------------------ embed mode
+ * The HMI iframe is exactly 640x480, so the standalone chrome is hidden and
+ * the CheerpJ display fills the whole viewport.  The host draws its own close
+ * control above the iframe.
+ */
+html.embed,
+html.embed body {
+  min-height: 0;
+  background: #000;
+  overflow: hidden;
+}
+
+body.embed .shell {
+  width: 640px;
+  height: 480px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  overflow: hidden;
+}
+
+body.embed .topbar,
+body.embed .runtime-toolbar,
+body.embed footer {
+  display: none;
+}
+
+body.embed .runtime {
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+body.embed .runtime[hidden] {
+  display: none;
+}
+
+body.embed .stage {
+  width: 640px;
+  height: 480px;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+}
+
+body.embed .display {
+  width: 640px;
+  height: 480px;
+  max-width: none;
+  overflow: hidden;
+}
+
+/*
+ * CheerpJ's virtual window manager puts the application content 20px below
+ * the top of the display, leaving room for `.cjTitleBar`. We hide the bar and
+ * pull the whole display up by that amount; with the taller display created in
+ * `app.js` this exposes the application's real top edge instead of a black gap.
+ */
+body.embed #cheerpjDisplay {
+  margin-top: -20px;
+}
+
+body.embed .log {
+  display: none;
+}
+
+/*
+ * CheerpJ decorates its virtual X11 windows with a blue title bar and a
+ * one-pixel outline, plus a "CHEERPJ COMMUNITY EDITION" strip at the bottom.
+ * The real head unit has no window manager, so hide that chrome in embed mode;
+ * the application itself still draws the full 640x480 stage.
+ */
+body.embed .cjTitleBar,
+body.embed .cheerpjNC::before {
+  display: none !important;
+}
+
+body.embed .cjBordered {
+  box-shadow: none !important;
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<wizard>
+	<dialog>
+		<id>1</id>
+		<key>IS_BLUETOOTH_ENABLED</key>
+		<message>Bluetooth pair your smartphone to the vehicle touchscreen in phone settings</message>		
+	</dialog>
+	<dialog>
+        <id>2</id>        
+        <key>SMARTPHONE_USE_BT_IPHONE_USE_USB</key>
+        <message>Visit UconnectPhone.com for smartphone compatibility with your Uconnect system.</message>
+    </dialog>
+    <dialog>
+        <id>3</id>         
+        <key>IS_SMARTPHONE_DATA_ENABLED</key>
+        <message>Download the Uconnect Access app to your smartphone from the App Store or Google Play.\nLog in to the app with your Mopar Owner Connect account.</message>
+    </dialog>
+    <dialog>
+        <id>4</id>
+        <key>SMARTPHONE_DATA_AND_NETWORK_CONNECTIONS</key>
+        <message>Via Mobile uses the Uconnect Access app and your smartphone's data plan to access Uconnect-enabled apps from the vehicle.</message>        
+    </dialog>
+    <dialog>
+        <id>5</id>
+        <key>IS_UCONNECT_INSTALLED</key>
+        <message>Link your account to your Via Mobile Profile on MoparOwnerConnect.com so you can access your saved stations and settings.</message>        
+    </dialog>
+    <dialog>
+        <id>6</id>
+        <key>MORE_UCONNECT_INFO_SITE</key>
+        <message>For more information on Via Mobile apps press ASSIST or call Uconnect Care\nUSA 1-855-792-4241\nCanada 1-855-209-8317\nor Visit DriveUConnect.com</message>        
+    </dialog>
+</wizard>

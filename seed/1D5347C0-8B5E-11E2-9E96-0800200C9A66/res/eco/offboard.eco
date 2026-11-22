@@ -1,0 +1,10 @@
+#ECO V1.2 UTF-8;
+# Columns:
+#Column1 Line_Number
+#Column2 Ortho
+#Column3 [Pho]
+#Format(Line_Number) Ident
+# ===Keys===
+#AppHelpText After the beep, say something like carwash, or pizza in Chicago
+#AppHelpPrompt After the beep, say something like carwash, or pizza in Chicago
+# === 

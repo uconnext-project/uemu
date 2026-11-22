@@ -1,0 +1,23 @@
+﻿#ECO V1.2 UTF-8;
+# Columns:
+#Column1 Line_Number
+#Column2 Ortho
+#Column3 [Pho]
+#Format(Line_Number) Ident
+# ===Keys===
+#AppHelpText Oprima o Diga una de las opciones anteriores
+#AppHelpPrompt Para ayuda con Asistencia en Carretera diga Asistencia en Carretera. Para ayuda con Aplicaciones o con la Tienda Uconnect diga Atencion al Cliente Uconnect. Para cualquier otro tipo de ayuda con el vehiculo diga Atencion al Cliente de Chrysler.
+# === 
+
+1;"Asistencia en carretera";
+1;"Carretera";
+2;"Uconnect Customer Care";
+2;"Uconnect Care";
+2;"Uconnect";
+3;"Chrysler Customer Care";
+3;"Chrysler Care";
+3;"Chrysler";
+4;"Salir";
+4;"Cancelar";
+4;"Quit";
+4;"Terminar";
