@@ -233,7 +233,7 @@ function javaProperties(app, variant) {
   return properties;
 }
 
-/** `/app/` is the origin root; the staged runtime lives under `xlets/`. */
+/** `/app/` is mapped to the parent of this page (overrideDocumentBase); the runtime lives under `xlets/`. */
 function runtimePath(relative) {
   return `/app/xlets/${relative.replace(/^\/+/, "")}`;
 }
@@ -257,6 +257,12 @@ async function launch(app, variant) {
       disableScaling: true,
       javaProperties: javaProperties(app, variant),
       enableDebug: DEBUG,
+      // CheerpJ mounts /app/ at the document base URL.  The xlet page lives at
+      // xlets/index.html, so by default /app/xlets/lib/... would resolve to
+      // xlets/xlets/lib/... (one level too deep).  Override the base to the
+      // parent directory so /app/xlets/... maps to the actual xlets/ folder,
+      // regardless of what path prefix the site is deployed under.
+      overrideDocumentBase: new URL("../", location.href).href,
     });
 
     setStatus("Creating the 640×480 display…", "Creating the display…");

@@ -528,7 +528,7 @@ try {
  * is true. Ruffle's `File` maps that to `vfs://desktop/xlets/<appId>/data/...`,
  * backed by localStorage. Seed the two probe keys (the value is irrelevant,
  * only `is_some()` matters) so the HMI keeps the real icon URLs, which the
- * `urlRewriteRules` then serve from `/xlets/`.
+ * `urlRewriteRules` then serve from the page-relative `xlets/` path.
  */
 function seedXletIconProbes(catalog) {
     const apps = Array.isArray(catalog?.apps) ? catalog.apps : [];
@@ -593,7 +593,7 @@ try {
 
 // Exposed for experiments from the devtools console:
 //   airBackend.on("Module", "command", ...)
-//   airPlayer.ruffle().load("/hmi/main.xml")
+//   airPlayer.ruffle().load("hmi/main.xml")
 //   airMedia.useDemo() / airMedia.pickFolder()
 //   airPhone.incomingCall() / airPhone.incomingSms() / airPhone.remoteHangup()
 //   airDriveMode.push() / airDriveMode.selec("track")
@@ -828,8 +828,9 @@ async function main() {
             wmode: "transparent",
             // HMI icon URLs are built as `"file://" + xletsDir + "/xlets/..."`.
             // `getXletsDir` returns "", so they are `file:///xlets/<appId>/...`
-            // and are served from the browser's `/xlets/` directory.
-            urlRewriteRules: [[/^file:\/\/\/xlets\//, "/xlets/"]],
+            // Rewrite them to a path relative to the page so the site works
+            // from any subdirectory (e.g. /uemu/ on GitHub Pages).
+            urlRewriteRules: [[/^file:\/\/\/xlets\//, new URL("xlets/", window.location.href).pathname]],
         });
     } catch (error) {
         showError(`Could not load ${appUrl}: ${error?.message ?? error}`);
