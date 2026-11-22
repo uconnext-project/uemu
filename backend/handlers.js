@@ -42,6 +42,7 @@ import { registerSpeech } from "./modules/speech.js";
 import { registerSxm } from "./modules/sxm.js";
 import { registerTuner } from "./modules/tuner.js";
 import { registerVehicle } from "./modules/vehicle.js";
+import { registerXlets } from "./modules/xlets.js";
 
 /**
  * Registers every project handler on the given backend.
@@ -55,14 +56,18 @@ import { registerVehicle } from "./modules/vehicle.js";
  * @param {Record<string, any>} [navfs] Parsed `backend/data/navfs.json`.
  * @param {Record<string, any>} [phones] Parsed `backend/data/phones.json`.
  * @param {Record<string, any>} [config] Parsed `backend/data/config.json`.
- * @param {{vehicleModel?: string|null}} [options] `?vehicle=` override.
+ * @param {{vehicleModel?: string|null,
+ *   xlets?: {catalog?: Record<string, any>|null,
+ *     overlay?: import("./modules/xlets.js").XletOverlay|null}}} [options]
+ *   `?vehicle=` override and the KIM1 xlet catalog/iframe controller.
  * @returns {{media: ReturnType<typeof registerMedia> | null,
  *   phone: ReturnType<typeof registerPhone> | null,
  *   vehicle: ReturnType<typeof registerVehicle> | null,
  *   driveMode: ReturnType<typeof registerDriveMode> | null,
  *   misc: ReturnType<typeof registerMisc> | null,
  *   sxm: ReturnType<typeof registerSxm>,
- *   speech: ReturnType<typeof registerSpeech>}} Module controllers the
+ *   speech: ReturnType<typeof registerSpeech>,
+ *   xlets: ReturnType<typeof registerXlets>}} Module controllers the
  *   launcher can expose in the HUD.
  */
 export function registerHandlers(
@@ -79,6 +84,11 @@ export function registerHandlers(
     // must run after Settings seeded its flags and before the HMI asks.
     const vehicle = registerVehicle(backend, config ?? {}, {
         model: options.vehicleModel ?? null,
+    });
+    // Real KIM1 xlets: AppManager protocol + the iframe layer under the HMI.
+    const xlets = registerXlets(backend, options.xlets?.catalog ?? {}, {
+        overlay: options.xlets?.overlay ?? null,
+        vehicle,
     });
     registerHvac(backend); // handlers.py:242-388 (Climate)
     registerAntiTheft(backend); // handlers.py:230-238 (Settings icon gate)
@@ -104,5 +114,6 @@ export function registerHandlers(
         misc: miscController,
         sxm: sxmController,
         speech: speechController,
+        xlets,
     };
 }

@@ -144,6 +144,11 @@ rm -f "$OUT/$RUFFLE_DIST/ruffle.js.map"
 # The AIR application itself (descriptor, SWFs, skins, text archives).
 cp -R hmi "$OUT"/
 
+# Real KIM1 xlets (JARs, icons, catalog + the CheerpJ runtime page) and the
+# per-app seeds. `pcrt.web.WebLauncher` reads `/app/seed/<appId>`, and `/app/`
+# is the site root, so `seed/` has to live next to `index.html`.
+cp -R xlets seed "$OUT"/
+
 # The HMI builds two URLRequests with a leading slash, so they resolve against
 # the site origin instead of /hmi/. Mirror those two trees at the root:
 #
@@ -159,4 +164,4 @@ cp -R hmi/img "$OUT/img"
 
 echo
 echo "static site ready: $OUT/ ($(du -sh "$OUT" | cut -f1))"
-echo "preview with: python3 -m http.server 8000 --directory \"$OUT\""
+echo "preview with: python3 tools/serve.py --port 8000 --directory \"$OUT\""

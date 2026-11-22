@@ -25,6 +25,19 @@ export interface PlayerV1 {
     ): void;
 
     /**
+     * Tests whether the stage pixel at `(x, y)` is transparent to mouse input.
+     *
+     * When the player is loaded with `wmode = "transparent"`, this can be used
+     * to route pointer events over empty areas to the page content underneath.
+     *
+     * @param x Horizontal position in stage pixels.
+     * @param y Vertical position in stage pixels.
+     *
+     * @returns `true` if no display object would receive a click there.
+     */
+    isPointTransparent(x: number, y: number): boolean;
+
+    /**
      * Any configuration that should apply to this specific player.
      * This will be defaulted with any global configuration.
      */

@@ -181,7 +181,15 @@
             <div id="stage">
                 <div id="player" aria-label="AIR application">
                     <div id="screen-slot">
-                        <div id="screen"></div>
+                        <div id="screen">
+                            <!-- KIM1 xlet layer: sits under the transparent
+                                 Ruffle canvas so the HMI keeps its chrome. -->
+                            <iframe
+                                id="xlet-frame"
+                                title="Uconnect xlet"
+                                allow="autoplay; fullscreen"
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
 

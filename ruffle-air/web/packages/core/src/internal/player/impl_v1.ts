@@ -17,6 +17,13 @@ export class PlayerV1Impl implements PlayerV1 {
         this.#inner.addFSCommandHandler(handler);
     }
 
+    /**
+     * Returns `true` when no display object covers the stage pixel `(x, y)`.
+     */
+    isPointTransparent(x: number, y: number): boolean {
+        return this.#inner.isPointTransparent(x, y);
+    }
+
     get readyState(): ReadyState {
         return this.#inner._readyState;
     }

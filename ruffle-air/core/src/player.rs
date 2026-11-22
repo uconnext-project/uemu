@@ -1051,6 +1051,21 @@ impl Player {
         })
     }
 
+    /// Tests whether the stage pixel at `(x, y)` is transparent to mouse input,
+    /// i.e. no display object would receive a click there.
+    ///
+    /// This lets an embedder with a transparent window (`wmode=transparent`)
+    /// forward clicks over empty areas to the HTML content underneath.
+    pub fn is_point_transparent(&mut self, x: f64, y: f64) -> bool {
+        let previous = self.mouse_position;
+        self.mouse_position = Point::from_pixels(x, y);
+        let hit = self.mutate_with_update_context(|context| {
+            run_mouse_pick(context, false).is_some()
+        });
+        self.mouse_position = previous;
+        !hit
+    }
+
     /// Handle an event sent into the player from the external windowing system
     /// or an HTML element.
     pub fn handle_event(&mut self, event: PlayerEvent) -> bool {

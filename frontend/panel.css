@@ -316,10 +316,39 @@ body {
 }
 
 #screen ruffle-player {
+    position: relative;
+    z-index: 1;
     display: block;
     inline-size: 640px;
     block-size: 480px;
     background: #000;
+}
+
+/*
+ * KIM1 xlet layer. The real Java application renders in an iframe *behind* the
+ * HMI, and Ruffle uses `wmode: transparent`, so the HMI screens that do not
+ * paint a background let the xlet show through while the HMI's own chrome
+ * (close button, taskbar) stays on top and receives the clicks.
+ */
+#xlet-frame {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: block;
+    inline-size: 640px;
+    block-size: 480px;
+    border: 0;
+    background: #000;
+}
+
+#screen:not(.xlet-open) #xlet-frame {
+    display: none;
+}
+
+#screen-slot.xlet-open,
+#screen.xlet-open,
+#screen.xlet-open ruffle-player {
+    background: transparent;
 }
 
 /* ------------------------------------------------------------- side panel */

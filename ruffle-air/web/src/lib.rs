@@ -373,6 +373,15 @@ impl RuffleHandle {
             .unwrap_or(JsValue::NULL)
     }
 
+    /// Returns `true` when no display object covers the stage pixel `(x, y)`.
+    ///
+    /// Used to route pointer events through transparent parts of the player to
+    /// whatever is layered underneath it.
+    pub fn is_point_transparent(&self, x: f64, y: f64) -> bool {
+        self.with_core_mut(|core| core.is_point_transparent(x, y))
+            .unwrap_or(true)
+    }
+
     pub fn renderer_name(&self) -> JsValue {
         self.with_core(|core| JsValue::from_str(core.renderer().name()))
             .unwrap_or(JsValue::NULL)

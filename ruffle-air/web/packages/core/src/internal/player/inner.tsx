@@ -370,6 +370,23 @@ export class InnerPlayer {
     }
 
     /**
+     * Returns `true` when no display object covers the stage pixel `(x, y)`.
+     *
+     * With a transparent window this allows the host page to forward pointer
+     * events over empty areas to content layered underneath the player.
+     */
+    public isPointTransparent(x: number, y: number): boolean {
+        if (!this.instance) {
+            return true;
+        }
+        try {
+            return this.instance.is_point_transparent(x, y);
+        } catch {
+            return true;
+        }
+    }
+
+    /**
      * Any configuration that should apply to this specific player.
      * This will be defaulted with any global configuration.
      */

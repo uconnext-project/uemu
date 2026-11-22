@@ -26,6 +26,211 @@ const params = new URLSearchParams(window.location.search);
 const appUrl = params.get("app") ?? params.get("url") ?? DEFAULT_APP;
 const vehicleModel = params.get("vehicle");
 
+const screenElement = document.getElementById("screen");
+const screenSlot = document.getElementById("screen-slot");
+const xletFrame = document.getElementById("xlet-frame");
+let xletUrl = "";
+
+/**
+ * Controls the KIM1 xlet iframe under the Ruffle canvas.
+ *
+ * `open` reloads the embedded page (CheerpJ initialises once per document),
+ * `hide` only hides the iframe so a paused xlet keeps its Java VM alive, and
+ * `close` unloads it.
+ */
+const xletOverlay = {
+    /**
+     * @param {{id: string}} app
+     * @param {{key: string}} variant
+     */
+    open(app, variant) {
+        const url = new URL("xlets/index.html", window.location.href);
+        url.search = new URLSearchParams({
+            app: app.id,
+            variant: variant.key,
+            embed: "1",
+        }).toString();
+        if (url.href !== xletUrl) {
+            xletUrl = url.href;
+            xletFrame.src = xletUrl;
+        }
+        screenElement.classList.add("xlet-open");
+        screenSlot.classList.add("xlet-open");
+    },
+    show() {
+        screenElement.classList.add("xlet-open");
+        screenSlot.classList.add("xlet-open");
+    },
+    hide() {
+        screenElement.classList.remove("xlet-open");
+        screenSlot.classList.remove("xlet-open");
+        setXletClickThrough(false);
+    },
+    close() {
+        xletUrl = "";
+        xletFrame.src = "about:blank";
+        this.hide();
+    },
+};
+
+/* ------------------------------------------------------- xlet input routing */
+
+const XLET_STAGE_WIDTH = 640;
+const XLET_STAGE_HEIGHT = 480;
+
+/**
+ * `wmode: "transparent"` lets the xlet show through the HMI, but the Ruffle
+ * canvas still receives every pointer event. When the HMI pixel under the
+ * pointer is transparent, `pointer-events` is switched off on the player so the
+ * native event reaches the iframe below. Over HMI chrome (status bar, title
+ * bar, close button, dock) Ruffle keeps receiving events as usual.
+ */
+function setXletClickThrough(through) {
+    if (!window.airPlayer) {
+        return;
+    }
+    window.airPlayer.style.pointerEvents = through ? "none" : "";
+}
+
+/** Maps a viewport point to 640×480 stage pixels. */
+function stagePointFromClient(clientX, clientY) {
+    const rect = screenElement.getBoundingClientRect();
+    if (!rect.width || !rect.height) {
+        return null;
+    }
+    return {
+        x: ((clientX - rect.left) / rect.width) * XLET_STAGE_WIDTH,
+        y: ((clientY - rect.top) / rect.height) * XLET_STAGE_HEIGHT,
+    };
+}
+
+/** `true` when no HMI display object covers the stage point. */
+function hmiIsTransparentAt(x, y) {
+    if (!screenElement.classList.contains("xlet-open")) {
+        return false;
+    }
+    if (
+        x < 0 ||
+        y < 0 ||
+        x >= XLET_STAGE_WIDTH ||
+        y >= XLET_STAGE_HEIGHT
+    ) {
+        return false;
+    }
+    const api = window.airPlayer?.ruffle?.();
+    if (!api || typeof api.isPointTransparent !== "function") {
+        return false;
+    }
+    try {
+        return api.isPointTransparent(x, y);
+    } catch (error) {
+        console.warn("[air] xlet hit test failed", error);
+        return false;
+    }
+}
+
+/**
+ * Re-dispatches an already-received press into the xlet. This only happens in
+ * the rare case where the pointer moved from HMI chrome onto transparent HMI in
+ * the same gesture, so Ruffle still had `pointer-events` enabled.
+ */
+function forwardPointerToXlet(type, event, x, y) {
+    const doc = xletFrame.contentDocument;
+    const win = xletFrame.contentWindow;
+    if (!doc || !win) {
+        return;
+    }
+    const target = doc.elementFromPoint(x, y) || doc.body;
+    if (!target) {
+        return;
+    }
+    try {
+        target.dispatchEvent(
+            new win.PointerEvent(type, {
+                bubbles: true,
+                cancelable: true,
+                composed: true,
+                view: win,
+                clientX: x,
+                clientY: y,
+                screenX: event.screenX,
+                screenY: event.screenY,
+                pointerId: event.pointerId ?? 1,
+                pointerType: event.pointerType || "mouse",
+                isPrimary: event.isPrimary ?? true,
+                button: event.button ?? 0,
+                buttons: 1,
+            }),
+        );
+    } catch (error) {
+        console.warn("[air] could not forward the press to the xlet", error);
+    }
+}
+
+/**
+ * Listens inside the same-origin xlet document. While Ruffle has
+ * `pointer-events: none`, events land here instead of the parent, so this is
+ * how we notice that the pointer is back over opaque HMI chrome.
+ */
+function bindXletInput() {
+    let doc;
+    try {
+        doc = xletFrame.contentDocument;
+    } catch {
+        return;
+    }
+    if (!doc || doc.__airClickThroughBound) {
+        return;
+    }
+    doc.__airClickThroughBound = true;
+    doc.addEventListener(
+        "pointermove",
+        (event) => {
+            setXletClickThrough(
+                hmiIsTransparentAt(event.clientX, event.clientY),
+            );
+        },
+        true,
+    );
+}
+
+xletFrame.addEventListener("load", bindXletInput);
+xletFrame.addEventListener("pointermove", bindXletInput);
+
+screenSlot.addEventListener(
+    "pointermove",
+    (event) => {
+        const point = stagePointFromClient(event.clientX, event.clientY);
+        if (!point) {
+            return;
+        }
+        setXletClickThrough(hmiIsTransparentAt(point.x, point.y));
+    },
+    true,
+);
+
+screenSlot.addEventListener(
+    "pointerdown",
+    (event) => {
+        if (!screenElement.classList.contains("xlet-open")) {
+            return;
+        }
+        if (event.target !== window.airPlayer) {
+            return;
+        }
+        const point = stagePointFromClient(event.clientX, event.clientY);
+        if (!point || !hmiIsTransparentAt(point.x, point.y)) {
+            return;
+        }
+        // The HMI is transparent here: stop Ruffle from consuming the press.
+        event.stopPropagation();
+        event.preventDefault();
+        setXletClickThrough(true);
+        forwardPointerToXlet("pointerdown", event, point.x, point.y);
+    },
+    true,
+);
+
 const hud = document.getElementById("hud");
 const hudTabs = document.getElementById("hud-tabs");
 const hudApp = document.getElementById("hud-app");
@@ -301,6 +506,54 @@ let miscController = null;
 let sxmController = null;
 /** @type {ReturnType<typeof registerHandlers>["speech"] | null} */
 let speechController = null;
+/** @type {ReturnType<typeof registerHandlers>["xlets"] | null} */
+let xletsController = null;
+/** @type {Record<string, any> | null} */
+let xletCatalog = null;
+
+try {
+    const response = await fetch(new URL("xlets/catalog.json", window.location.href));
+    if (response.ok) {
+        xletCatalog = await response.json();
+    } else {
+        console.warn(`[air] xlet catalog: HTTP ${response.status}`);
+    }
+} catch (error) {
+    console.warn("[air] could not load the xlet catalog", error);
+}
+
+/**
+ * `AppXlet.as:60-61` only uses `onIcon.png`/`offIcon.png` if
+ * `File.desktopDirectory.resolvePath("<xletsDir>/<appId>/data/<icon>").exists`
+ * is true. Ruffle's `File` maps that to `vfs://desktop/xlets/<appId>/data/...`,
+ * backed by localStorage. Seed the two probe keys (the value is irrelevant,
+ * only `is_some()` matters) so the HMI keeps the real icon URLs, which the
+ * `urlRewriteRules` then serve from `/xlets/`.
+ */
+function seedXletIconProbes(catalog) {
+    const apps = Array.isArray(catalog?.apps) ? catalog.apps : [];
+    if (!apps.length) {
+        return;
+    }
+    try {
+        for (const app of apps) {
+            if (!app?.id) {
+                continue;
+            }
+            for (const icon of ["onIcon.png", "offIcon.png"]) {
+                const key = `vfs://desktop/xlets/${app.id}/data/${icon}`;
+                if (window.localStorage.getItem(key) === null) {
+                    // "AA==" is one zero byte; only existence is queried.
+                    window.localStorage.setItem(key, "AA==");
+                }
+            }
+        }
+    } catch (error) {
+        console.warn("[air] could not seed the xlet VFS icon probes", error);
+    }
+}
+
+seedXletIconProbes(xletCatalog);
 
 try {
     const seed = await loadSeed();
@@ -321,7 +574,10 @@ try {
         seed.navfs,
         seed.phones,
         seed.config,
-        { vehicleModel },
+        {
+            vehicleModel,
+            xlets: { catalog: xletCatalog, overlay: xletOverlay },
+        },
     );
     mediaController = modules.media;
     phoneController = modules.phone;
@@ -330,6 +586,7 @@ try {
     miscController = modules.misc;
     sxmController = modules.sxm;
     speechController = modules.speech;
+    xletsController = modules.xlets;
 } catch (error) {
     showError(`Could not create the HMI backend: ${error}`);
 }
@@ -351,6 +608,23 @@ window.airDriveMode = driveModeController;
 window.airCamera = miscController;
 window.airSxm = sxmController;
 window.airSpeech = speechController;
+window.airXlets = xletsController;
+
+// Messages from the embedded CheerpJ page (`xlets/app.js`).
+window.addEventListener("message", (event) => {
+    if (event.source !== xletFrame.contentWindow) {
+        return;
+    }
+    const data = event.data;
+    if (!data || data.source !== "air-xlet") {
+        return;
+    }
+    if (data.type === "error") {
+        appendBackendLog("!!", `xlet: ${data.message}`);
+    } else if (data.type === "exit") {
+        xletsController?.exited(data.appId);
+    }
+});
 
 /**
  * Commands the head unit would send to a module. Used by the control panel
@@ -548,6 +822,14 @@ async function main() {
             // that native size and let the panel scale the whole element with
             // CSS, so the movie's stage never changes dimensions.
             letterbox: "on",
+            // The AIR descriptor asks for a transparent window. With a
+            // transparent canvas the xlet iframe below stays visible while the
+            // HMI keeps its opaque chrome on top.
+            wmode: "transparent",
+            // HMI icon URLs are built as `"file://" + xletsDir + "/xlets/..."`.
+            // `getXletsDir` returns "", so they are `file:///xlets/<appId>/...`
+            // and are served from the browser's `/xlets/` directory.
+            urlRewriteRules: [[/^file:\/\/\/xlets\//, "/xlets/"]],
         });
     } catch (error) {
         showError(`Could not load ${appUrl}: ${error?.message ?? error}`);
