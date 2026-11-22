@@ -213,6 +213,13 @@ function updateVariantDetail() {
 
 /* ------------------------------------------------------------------ launcher */
 
+// Path resolution inside CheerpJ's /app/ virtual filesystem:
+// CheerpJ maps /app/ to the origin root (e.g. https://.../ or http://localhost:8000/).
+// If the site is served from a subpath (e.g. /uemu/), /app/ must be followed by that subpath.
+const appSubpath = new URL("../", location.href).pathname.replace(/^\/+/, "");
+const VFS_ROOT = appSubpath ? `/app/${appSubpath}` : "/app/";
+const VFS_XLETS = `${VFS_ROOT}xlets/`;
+
 function javaProperties(app, variant) {
   const properties = [
     // Kona's PlatformInfo.isRunningInEmulator() checks os.arch against
@@ -227,10 +234,10 @@ function javaProperties(app, variant) {
     "pcrt.width=640",
     "pcrt.height=480",
     `pcrt.rms=/files/rms/${app.id}`,
-    "pcrt.sensorValues=/app/xlets/lib/sensor_values.properties",
+    `pcrt.sensorValues=${VFS_XLETS}lib/sensor_values.properties`,
     "pcrt.vugDownloadDir=/files/download",
-    "pcrt.desktopJar=/app/xlets/lib/pcrt-desktop.jar",
-    "pcrt.extraJar=/app/xlets/lib/backport.jar",
+    `pcrt.desktopJar=${VFS_XLETS}lib/pcrt-desktop.jar`,
+    `pcrt.extraJar=${VFS_XLETS}lib/backport.jar`,
   ];
   if (variant.srt) properties.push("pcrt.srtPresent=true");
   if (variant.vug) properties.push("pcrt.layoutRefresh=true");
@@ -238,13 +245,8 @@ function javaProperties(app, variant) {
   return properties;
 }
 
-// Jeśli strona jest pod /uemu/xlets/index.html, basePrefix to "/app/uemu/xlets/"
-// Jeśli lokalnie pod /xlets/index.html, basePrefix to "/app/xlets/"
-const appDir = new URL("./", location.href).pathname.replace(/^\/+/, "");
-const VFS_XLETS_BASE = `/app/${appDir}`;
-
 function runtimePath(relative) {
-  return `${VFS_XLETS_BASE}${relative.replace(/^\/+/, "")}`;
+  return `${VFS_XLETS}${relative.replace(/^\/+/, "")}`;
 }
 
 async function launch(app, variant) {
